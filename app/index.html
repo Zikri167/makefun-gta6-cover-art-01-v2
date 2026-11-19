@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Palms Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>Neon Palms <span>Cover Studio</span></h1>
+  <p class="tag">Turn your photos into GTA-style poster covers. Everything runs offline, on your machine — your photos are never uploaded.</p>
+</header>
+<main class="studio">
+  <section class="controls" id="controls" aria-label="Cover controls">
+    <div class="group">
+      <h2>1 · Layout</h2>
+      <div id="layouts" class="chips"></div>
+    </div>
+    <div class="group">
+      <h2>2 · Photo</h2>
+      <div id="panelTabs" class="chips"></div>
+      <label class="file">Upload a photo
+        <input id="upload" type="file" accept="image/*">
+      </label>
+      <div id="samples" class="chips"></div>
+      <button id="fillAll" type="button">Use this photo in every panel</button>
+      <label class="slider">Zoom
+        <input id="zoom" type="range" min="1" max="3" step="0.05" value="1">
+      </label>
+      <button id="resetView" type="button">Reset crop</button>
+      <p class="hint">Tip: click a panel in the preview to pick it, drag to move its photo, scroll to zoom.</p>
+    </div>
+    <div class="group">
+      <h2>3 · Grade</h2>
+      <div id="grades" class="chips"></div>
+      <label class="check"><input id="posterise" type="checkbox"> Ink posterise</label>
+    </div>
+    <div class="group">
+      <h2>4 · Words</h2>
+      <label class="field">Caption
+        <input id="caption" type="text" maxlength="28" value="NEON PALMS">
+      </label>
+      <label class="field">Subtitle
+        <input id="subtitle" type="text" maxlength="40" value="Vice City nights">
+      </label>
+    </div>
+    <div class="group">
+      <h2>5 · Size &amp; export</h2>
+      <div id="sizes" class="chips"></div>
+      <button id="export" type="button" class="primary">Export PNG</button>
+      <p id="status" role="status"></p>
+    </div>
+  </section>
+  <section class="preview" aria-label="Cover preview">
+    <canvas id="cover" aria-label="The cover"></canvas>
+    <p class="preview-note">Live preview — drag a panel to reposition its photo.</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
